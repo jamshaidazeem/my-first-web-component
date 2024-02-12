@@ -6,6 +6,8 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      // This flag is what tells Stencil to use this target for validation
+      isPrimaryPackageOutputTarget: true,
     },
     {
       type: 'dist-custom-elements',
@@ -18,7 +20,9 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  // If this is not set, Stencil will not validate any targets
+  validatePrimaryPackageOutputTarget: true,
   testing: {
-    browserHeadless: "new",
+    browserHeadless: 'new',
   },
 };
